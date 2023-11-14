@@ -5,6 +5,6 @@ import com.example.week12_api.model.Users
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("employees")
+    @GET("data.php")
     fun getAllUsers(): Call <Users>
 }

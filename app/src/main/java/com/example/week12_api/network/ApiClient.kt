@@ -7,18 +7,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
     fun getInstance(): ApiService {
-        val mHttpLoggingInterceptor = HttpLoggingInterceptor()
+        val mhttplogginginterceptor = HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY)
         val mOkHttpClient = OkHttpClient
             .Builder()
-            .addInterceptor(mHttpLoggingInterceptor)
+            .addInterceptor(mhttplogginginterceptor)
             .build()
         val builder = Retrofit.Builder()
-            .baseUrl("https://dummy.restapiexample.com/api/v1/")
+            .baseUrl("https://demo.lazday.com/rest-api-sample/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(mOkHttpClient)
             .build()
         return builder.create(ApiService::class.java)
     }
-
 }
